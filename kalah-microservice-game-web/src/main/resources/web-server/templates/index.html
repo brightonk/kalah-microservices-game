@@ -1,0 +1,41 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="header :: copy"></head>
+  <body>
+    <title>Game Dev. using Microservice</title>
+    <h3>Overview</h3>
+    <ul>
+      <li>This is a project to illustrate the use of microservice to create a game system.</li>
+      <li>The system consists of three components: i. eureka registry (which is also a microservice) ii. bot player microservice iii. web ui microservice. All information is fetched via a RESTful interface. When the game starts, the system switches to websocket to enable realtie update without need for polling.</li>
+      <li>Eureka registry is a directory that maintains a list of available services. This enables the system to scale and grow to an ecosystem of microservices that can discover and use each other's services.</li>
+      <li>Bot player microservice represents the computer when a human chooses to play against the computer. If the user selects a higher level of difficulty, the system will lookup on the eureka registry for a bot player that has a matching level of difficulty. System maintainers and dev. teams can create bot that use machine learning and AI.</li>
+      <li>Web ui microservice represents a frontend that interacts with user. User can make submit his choices at each stage of the game and see the outcome.</li>
+    </ul>
+    <h3>Starting the System</h3>
+    <ul class="openlist">
+      <li>Start up the system in order; starting with Eureka service so that the directory is available, then the bot microservice and the web ui microservice</li>
+      <li>To start Eureka, open a command terminal and change directory to the eureka folder. Open and update the file start-eureka.sh. set the correct path for the jar file according to where you saved the folder. Use the command <strong>"start-eureka.sh"</strong>. Check if it is running by navigating with the browser to <a href="http://localhost:1111/">Eureka page</a></li>
+      <li>To start Bot service, open a command terminal and change directory to the bot folder. Open and update the file start-bot.sh. set the correct path for the jar file according to where you saved the folder. Use the command <strong>"start-bot.sh"</strong>. Check if it is running by navigating with the browser to <a href="http://localhost:2222/">Bot page</a></li>
+      <li>To start Eureka, open a command terminal and change directory to the eureka folder. Open and update the file start-eureka.sh. set the correct path for the jar file according to where you saved the folder. Use the command <strong>"start-web.sh"</strong>. Check if it is running by navigating with the browser to <a href="http://localhost:3333/">Web page</a></li>
+      <li>Web ui is the page used by the users to play the game</li>
+    </ul>
+    <h3>Game Links - The Demo</h3>
+    <ul class="openlist">
+      <li>Join game: <a th:href="@{/game}">/game</a></li>
+      <li>Eureka Dashboard: <a href="http://localhost:1111">http://localhost:1111</a></li>
+      <li>Check applications registered: <a href="http://localhost:1111/eureka/apps/">http://localhost:1111/eureka/apps/</a></li>
+    </ul>
+    <h3>DevOps Links</h3>
+    <p>The following links will be used by the operations and DevOps teams to monitor the health of the system and detect any system issues. The information is provided as RESTful URLs for interoperating with existing monitoring dashboards and alert systems (they return JSON format data):</p>
+    <ul>
+      <li><a th:href="@{/beans}">The beans</a></li>
+      <li><a th:href="@{/env}">The environment</a></li>
+      <li><a th:href="@{/dump}">Thread dump</a></li>
+      <li><a th:href="@{/health}">Application health</a></li>
+      <li><a th:href="@{/info}">Application information</a></li>
+      <li><a th:href="@{/metrics}">Application metrics</a></li>
+      <li><a th:href="@{/trace}">Request call trace</a></li>
+    </ul>
+    <div th:replace="footer :: copy"></div>
+  </body>
+</html>

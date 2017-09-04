@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="copy">
+        <title>Game Dev. using Microservice</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" id="Viewport" name="viewport" />
+        <!-- Bootstrap -->
+        <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" />
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body th:fragment="copy" class="container">
+        <nav class="navbar navbar-default navbar-inverse" role="navigation" style="margin-bottom: 2px;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
+                    <!-- Logo -->
+                    <span class="icon-bar"></span>
+                    <!-- Home -->
+                    <span class="icon-bar"></span>
+                    <!-- Another Menu Item -->
+                    <span class="icon-bar"></span>
+                    <!-- Another Menu Item -->
+                </button>
+                <!-- add here an anchor with image height="50" to display on far left i.e. logo -->
+                &nbsp;&nbsp;&nbsp;
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/" th:href="@{/}">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><!-- add here an anchor with image to display on far right of nav bar --></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </body>
+</html>

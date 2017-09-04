@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.kalah</groupId>
+    <artifactId>kalah-microservice-game-build-aggregator</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>kalah-microservice-game-build-aggregator</name>
+    <!--
+    This application consists of multiple Maven projects.
+    It is a nuisance to build each project separately.
+    Moreover, it is necessary to build the projects in a certain order and
+    the developer(s) must remember to observe the correct build order.
+    To simplify building multiple projects, this aggregate maven project was created.
+    see also https://www.smartics.eu/confluence/display/BLOG/2013/07/22/Using+Aggregate+and+Parent+POMs  
+    -->
+    <modules>
+        <module>../kalah-microservice-game-web</module>
+        <module>../kalah-microservice-game-eureka-registry</module>
+        <module>../kalah-microservice-game-bot-player</module>
+    </modules>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+</project>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="header :: copy"></head>
+  <body>
+    <noscript>
+      <h2>Sorry! Your browser doesn't support Javascript</h2>
+    </noscript>
+    <div id="username-page">
+      <ul id="errorMessageArea">
+      </ul>
+      <div class="username-page-container">
+        <h1 class="title">Type your username</h1>
+        <form id="usernameForm" name="usernameForm">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Username" autocomplete="off" class="form-control" />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="accent username-submit">Start Game</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="game-page" class="hidden">
+      <div class="game-container">
+        <div class="game-header">
+          <h2>Microservices Game</h2>
+        </div>
+        <div class="connecting">
+          Connecting...
+        </div>
+        <ul id="messageArea">
+        </ul>
+        <div id="player1-board" class="hidden">
+          <table class="table table-striped td-center-content" style="align-content: center">
+            <tr><td id="player2-to-play"></td><td id="player2-name" colspan="7"></td></tr>
+            <tr><td id="pit-00" rowspan="2">0</td><td id="pit-13">4</td><td id="pit-12">4</td><td id="pit-11">4</td><td id="pit-10">4</td><td id="pit-09">4</td><td id="pit-08">4</td><td id="pit-07" rowspan="2">0</td></tr>
+            <tr>                                  <td id="pit-01">4</td><td id="pit-02">4</td><td id="pit-03">4</td><td id="pit-04">4</td><td id="pit-05">4</td><td id="pit-06">4</td>                                    </tr>
+            <tr><td id="player1-to-play"></td><td id="player1-name" colspan="7"></td></tr>
+          </table>
+        </div>
+        <div id="player2-board" class="hidden">
+          <table class="table table-striped td-center-content" style="align-content: center">
+            <tr><td id="player1-to-play"></td><td id="player1-name" colspan="7"></td></tr>
+            <tr><td id="pit-07" rowspan="2">0</td><td id="pit-06">4</td><td id="pit-05">4</td><td id="pit-04">4</td><td id="pit-03">4</td><td id="pit-02">4</td><td id="pit-01">4</td><td id="pit-00" rowspan="2">0</td></tr>
+            <tr>                                  <td id="pit-08">4</td><td id="pit-09">4</td><td id="pit-10">4</td><td id="pit-11">4</td><td id="pit-12">4</td><td id="pit-13">4</td>                                    </tr>
+            <tr><td id="player2-to-play"></td><td id="player2-name" colspan="7"></td></tr>
+          </table>
+        </div>
+        <div> - Last player to join has the first move.</div>
+        <div> - Click one of the table cells to start playing.</div>
+        <div> - Click the home button above to return</div>
+      </div>
+    </div>
+    <div th:replace="footer :: copy"></div>
+  </body>
+</html>

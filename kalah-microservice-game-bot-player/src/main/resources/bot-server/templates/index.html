@@ -1,0 +1,19 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="header :: copy"></head>
+    <body>
+		<title>Game Dev. using Microservice</title>
+        <h1>Game Dev. using Microservice - Bot Player Server</h1>
+        <p>Bot Player Server Microservice is running.</p>
+        <h3>DevOps Links</h3>
+        <p>The following links will be used by the operations and DevOps teams to monitor the health of the system and detect any system issues. The information is provided as RESTful URLs for interoperating with existing monitoring dashboards and alert systems (they return JSON format data):</p>
+        <ul>
+            <li><a th:href="@{/beans}">The beans</a></li>
+            <li><a th:href="@{/env}">The environment</a></li>
+            <li><a th:href="@{/health}">Application health</a></li>
+            <li><a th:href="@{/metrics}">Application metrics</a></li>
+            <li><a th:href="@{/trace}">Request call trace</a></li>
+        </ul>
+        <div th:replace="footer :: copy"></div>
+    </body>
+</html>
