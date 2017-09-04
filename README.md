@@ -4,7 +4,7 @@ This is a project to illustrate the use of microservice to create a game system.
 ### Overview
 
 *   This is a project to illustrate the use of microservice to create a game system.
-*   The system consists of three components: i. eureka registry (which is also a microservice) ii. bot player microservice iii. web ui microservice. All information is fetched via a RESTful interface. When the game starts, the system switches to websocket to enable realtie update without need for polling.
+*   The system consists of three components: i. eureka registry (which is also a microservice) ii. bot player microservice iii. web ui microservice. All information is fetched via a RESTful interface. When the game starts, the system switches to websocket to enable realtime updates.
 *   Eureka registry is a directory that maintains a list of available services. This enables the system to scale and grow to an ecosystem of microservices that can discover and use each other's services.
 *   Bot player microservice represents the computer when a human chooses to play against the computer. If the user selects a higher level of difficulty, the system will lookup on the eureka registry for a bot player that has a matching level of difficulty. System maintainers and dev. teams can create bot that use machine learning and AI.
 *   Web ui microservice represents a frontend that interacts with user. User can make submit his choices at each stage of the game and see the outcome.
